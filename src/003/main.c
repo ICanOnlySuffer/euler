@@ -27,6 +27,6 @@ int main () {
 		}
 	}
 	
-	printf ("largest prime factor: %lu\n", largest_prime_factor);
+	printf ("%lu\n", largest_prime_factor);
 }
 

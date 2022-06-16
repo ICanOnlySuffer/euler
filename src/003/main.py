@@ -1,20 +1,20 @@
 from math import sqrt
 
-NUMBER = 600851475143
+number = 600851475143
 
-if NUMBER % 2 == 0:
-	LARGEST_PRIME_FACTOR = 0
-	while NUMBER % 2 == 0:
-		NUMBER /= 2
+if number % 2 == 0:
+	largest_prime_factor = 0
+	while number % 2 == 0:
+		number /= 2
 else:
-	LARGEST_PRIME_FACTOR = 1
+	largest_prime_factor = 1
 
-for i in range (3, int (sqrt (NUMBER)) + 1, 2):
-	if NUMBER % i == 0:
-		if i > LARGEST_PRIME_FACTOR:
-			LARGEST_PRIME_FACTOR = i
-		while NUMBER % i == 0:
-			NUMBER /= i
+for i in range (3, int (sqrt (number)) + 1, 2):
+	if number % i == 0:
+		if i > largest_prime_factor:
+			largest_prime_factor = i
+		while number % i == 0:
+			number /= i
 
-print ("largest prime factor:", LARGEST_PRIME_FACTOR)
+print (largest_prime_factor)
 
