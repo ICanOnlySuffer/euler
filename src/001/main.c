@@ -7,6 +7,6 @@ int main () {
 			sum += i;
 		}
 	}
-	printf ("sum: %i\n", sum);
+	printf ("%i\n", sum);
 }
 
