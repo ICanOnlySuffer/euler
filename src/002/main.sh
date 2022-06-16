@@ -1,5 +1,4 @@
 
-sum=0
 a=1
 b=1
 
@@ -15,5 +14,5 @@ do
 	fi
 done
 
-echo "sum: $sum"
+echo $sum
 

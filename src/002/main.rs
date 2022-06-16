@@ -13,6 +13,6 @@ fn main () {
 			sum += a;
 		}
 	}
-	println! ("sum: {}", sum);
+	println! ("{}", sum);
 }
 

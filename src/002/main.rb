@@ -7,5 +7,5 @@ while b < 4_000_000
 	sum += a if a % 2 == 0
 end
 
-puts "sum: #{sum}"
+puts sum
 

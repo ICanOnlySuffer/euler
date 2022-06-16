@@ -14,6 +14,6 @@ int main () {
 			sum += a;
 		}
 	}
-	printf ("sum: %u\n", sum);
+	printf ("%u\n", sum);
 }
 
