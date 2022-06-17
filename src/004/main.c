@@ -4,19 +4,16 @@
 # define MAX 999
 # define MIN 100
 
-unsigned int reverse (unsigned int number) {
+bool is_palindrome (unsigned int number) {
+	unsigned int original = number;
 	unsigned int reversed = 0;
 	
 	while (number) {
-		reversed = reversed * 10 + (number % 10);
+		reversed = reversed * 10 + number % 10;
 		number /= 10;
 	}
 	
-	return reversed;
-}
-
-static inline bool is_palindrome (unsigned int number) {
-	return reverse (number) == number;
+	return original == reversed;
 }
 
 int main () {
@@ -26,7 +23,10 @@ int main () {
 		for (int j = MAX; j >= MIN; j--) {
 			unsigned int number = i * j;
 			
-			if (is_palindrome (number) && number > largest) {
+			if (number < largest) {
+				break;
+			}
+			if (is_palindrome (number)) {
 				largest = number;
 				break;
 			}
