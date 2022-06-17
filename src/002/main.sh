@@ -1,18 +1,20 @@
 
-a=1
-b=1
-
-while [ $b -lt 4000000 ]
-do
-	c=$a
-	a=$b
-	let b+=$c
+awk '
+BEGIN {
+	a = 1
+	b = 1
 	
-	if (( $a % 2 == 0 ))
-	then
-		let sum+=$a
-	fi
-done
-
-echo $sum
+	while (b < 4000000) {
+		c = a
+		a = b
+		b += c
+		
+		if (a % 2 == 0) {
+			sum += a
+		}
+	}
+	
+	print sum
+}
+'
 

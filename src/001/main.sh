@@ -1,7 +1,13 @@
 
-for i in {0..1000}; do
-	(( $i % 3 == 0 )) || (( $i % 5 == 0 )) && let sum+=$i
-done
-
-echo $sum
+awk '
+BEGIN {
+	for (i = 0; i < 1000; i++) {
+		if (i % 3 == 0 || i % 5 == 0) {
+			sum += i
+		}
+	}
+	
+	print sum
+}
+'
 
