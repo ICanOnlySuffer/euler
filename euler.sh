@@ -1,7 +1,5 @@
 #!/bin/env sh
 
-result=''
-
 euler () {
 	for arg in "$@"; do
 		if [ -d $arg ]; then
@@ -14,10 +12,11 @@ euler () {
 				echo -e "\033[36m$result\033[37m <- result"
 			fi
 			euler $arg/*
+			result=''
 			echo
 		elif [ -f $arg ]; then
 			case $arg in
-			*.c) gcc $arg -lm && ./a.out; rm -r a.out;;
+			*.c) cc $arg -lm && ./a.out; rm -r a.out;;
 			*.rs) rustc $arg && ./main; rm -r main;;
 			*.sh) $SHELL $arg;;
 			*.py) python $arg;;
