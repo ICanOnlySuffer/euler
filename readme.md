@@ -22,3 +22,24 @@ of the problem: [https://projecteuler.net/problem=X]()
 
 My code has no license because the solutions are small and generic.
 
+## Checking
+
+To see if there is a shell script `euler.sh` that can sourced and used
+to compile, run, check and clean all directories and files provided.
+
+**how to source:**
+
+	$ source euler.sh
+
+**examples:**
+
+This will show the problem 005 then compile, run and check all
+solutions in that directory.
+
+	$ euler src/005
+
+This will compile, run and check all the solutions of the problem 002
+without printing the problem and expected result.
+
+	$ euler src/005/*
+
