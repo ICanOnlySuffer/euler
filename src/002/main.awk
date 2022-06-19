@@ -1,13 +1,8 @@
 
-awk '
 BEGIN {
-	a = 1
-	b = 1
-	
-	while (b < 4000000) {
+	for (a = b = 1; b < 4000000; b += c) {
 		c = a
 		a = b
-		b += c
 		
 		if (a % 2 == 0) {
 			sum += a
@@ -16,5 +11,4 @@ BEGIN {
 	
 	print sum
 }
-'
 

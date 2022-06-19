@@ -1,8 +1,7 @@
 
-awk '
 BEGIN {
-	MAX=999
-	MIN=100
+	MAX = 999
+	MIN = 100
 	
 	for (i = MAX; i >= MIN; i--) {
 		for (j = MAX; j >= MIN; j--) {
@@ -32,5 +31,4 @@ function is_palindrome (number) {
 	
 	return original == reversed
 }
-'
 

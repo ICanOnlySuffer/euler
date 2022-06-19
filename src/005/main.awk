@@ -1,5 +1,4 @@
 
-awk '
 BEGIN {
 	smallest = 1
 	for (i = 2; i < 20; i++) {
@@ -20,5 +19,4 @@ function gcd (a, b) {
 function lcm (a, b) {
 	return a * b / gcd(a, b)
 }
-'
 

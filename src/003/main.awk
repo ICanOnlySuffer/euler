@@ -1,8 +1,7 @@
 
-NUMBER=600851475143
-
-awk "BEGIN {
-	number = $NUMBER
+BEGIN {
+	NUMBER = 600851475143
+	number = NUMBER
 	
 	if (number % 2 == 0) {
 		largest_prime_factor = 0
@@ -26,5 +25,5 @@ awk "BEGIN {
 	}
 	
 	print largest_prime_factor
-}"
+}
 

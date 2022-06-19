@@ -1,11 +1,9 @@
 
-NTH=10001
-
-awk "
 BEGIN {
+	NTH = 10001
 	number = 1
 	
-	for (i = 1; i < $NTH; ) {
+	for (i = 1; i < NTH; ) {
 		number += 2
 		if (is_prime(number)) {
 			i++
@@ -23,5 +21,4 @@ function is_prime (number) {
 	}
 	return 1
 }
-"
 
