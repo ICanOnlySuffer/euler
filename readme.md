@@ -41,5 +41,5 @@ solutions in that directory.
 This will compile, run and check all the solutions of the problem 002
 without printing the problem and expected result.
 
-	$ euler src/005/*
+	$ euler src/002/*
 
