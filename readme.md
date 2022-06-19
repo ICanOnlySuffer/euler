@@ -2,7 +2,7 @@
 
 This repository contains some solutions to the [Project Euler](
 https://projecteuler.net/about) problems in various languages such as
-C, Ruby, Python, Rust and POSIX Shell.
+C, Rust, Awk, Python and Ruby.
 
 I am solving these problems to learn better practices and understand
 better some programming languages I rarely use (like Rust and Python).
