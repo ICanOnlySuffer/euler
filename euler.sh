@@ -20,7 +20,7 @@ euler () {
 			case $arg in
 			*.c) cc $arg -lm && ./a.out "$input"; rm -r a.out;;
 			*.rs) rustc $arg && ./main "$input"; rm -r main;;
-			*.sh) $SHELL $arg "$input";;
+			*.awk) awk -f $arg "$input";;
 			*.py) python $arg "$input";;
 			*.rb) ruby $arg "$input";;
 			*) echo skip;;
