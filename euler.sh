@@ -4,6 +4,7 @@ euler () {
 	for arg in "$@"; do
 		if [ -d $arg ]; then
 			if [ -f "$arg/problem.md" ]; then
+				echo
 				echo -e "\033[1;32m`head -n1 $arg/problem.md`\033[37m"
 				sed 1d "$arg/problem.md"
 			fi
@@ -13,14 +14,15 @@ euler () {
 			fi
 			euler $arg/*
 			result=''
-			echo
 		elif [ -f $arg ]; then
+			input="`dirname $arg`/input.txt"
+			
 			case $arg in
-			*.c) cc $arg -lm && ./a.out; rm -r a.out;;
-			*.rs) rustc $arg && ./main; rm -r main;;
-			*.sh) $SHELL $arg;;
-			*.py) python $arg;;
-			*.rb) ruby $arg;;
+			*.c) cc $arg -lm && ./a.out "$input"; rm -r a.out;;
+			*.rs) rustc $arg && ./main "$input"; rm -r main;;
+			*.sh) $SHELL $arg "$input";;
+			*.py) python $arg "$input";;
+			*.rb) ruby $arg "$input";;
 			*) echo skip;;
 			esac | read output
 			
