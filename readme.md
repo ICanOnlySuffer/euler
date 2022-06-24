@@ -6,7 +6,6 @@ C, Rust, Awk, Python and Ruby.
 
 I am solving these problems to learn better practices and understand
 better some programming languages I rarely use (like Rust and Python).
-None of the code here is taken from any other source.
 
 ## Copyright
 
@@ -20,12 +19,13 @@ Also read [copyright](https://projecteuler.net/copyright).
 To go to the page of a problem just replace the \`X\` with the index
 of the problem: [https://projecteuler.net/problem=X]()
 
-My code has no license because the solutions are small and generic.
+None of the solutions here are taken from any other source and my code
+has no license because they're are small and generic.
 
 ## Checking
 
-To see if there is a shell script `euler.sh` that can sourced and used
-to compile, run, check and clean all directories and files provided.
+There is a shell script called `euler.sh` that can sourced and used to
+compile, run, check and clean all directories and files provided.
 
 **how to source:**
 
