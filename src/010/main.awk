@@ -1,8 +1,9 @@
 
 BEGIN {
 	MAX = 2000000
+	sum = 2
 	
-	for (i = 2; i < MAX; i++) {
+	for (i = 3; i < MAX; i += 2) {
 		if (is_prime(i)) {	
 			sum += i
 		}
@@ -12,9 +13,12 @@ BEGIN {
 }
 
 function is_prime (number) {
-	for (_ = 2; _ * _ <= number; _++) {
-		if (number % _ == 0) {
-			return 0
+	if (number % 2) {
+		max = int (sqrt (number))
+		for (_ = 3; _ <= max; _ += 2) {
+			if (number % _ == 0) {
+				return 0
+			}
 		}
 	}
 	return 1

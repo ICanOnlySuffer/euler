@@ -5,12 +5,13 @@ trait Prime {
 
 impl Prime for u64 {
 	fn is_prime (&self) -> bool {
-		let mut i: u64 = 2;
-		while i * i <= *self {
-			if *self % i == 0 {
-				return false;
+		if *self % 2 != 0 {
+			let max = (*self as f64).sqrt () as u64;
+			for i in (3..=max).step_by (2) {
+				if *self % i == 0 {
+					return false;
+				}
 			}
-			i += 1;
 		}
 		return true;
 	}
@@ -18,9 +19,9 @@ impl Prime for u64 {
 
 fn main () {
 	const MAX: u64 = 2000000;
-	let mut sum: u64 = 0;
+	let mut sum: u64 = 2;
 	
-	for i in 2..MAX {
+	for i in (3..MAX).step_by (2) {
 		if i.is_prime () {
 			sum += i;
 		}
