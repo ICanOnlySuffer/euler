@@ -1,6 +1,25 @@
 #!/bin/env sh
 
+
 euler () {
+	run-c () {
+		cc $1 -lm || return 'skip'
+		./a.out $2 | read output || return 'skip'
+		rm a.out
+		return $output
+	}
+	
+	run-rust () {
+		rustc $1 || return 'skip'
+		./main $2 | read output || return 'skip'
+		rm main
+		return $output
+	}
+	
+	run-awk () {
+		
+	}
+	
 	for arg in "$@"; do
 		if [ -d $arg ]; then
 			if [ -f "$arg/problem.md" ]; then
@@ -18,7 +37,8 @@ euler () {
 			input="`dirname $arg`/input.txt"
 			
 			case $arg in
-			*.c) cc $arg -lm && ./a.out "$input"; rm -r a.out;;
+			*.c)
+				cc $arg -lm && ./a.out "$input"; rm -r a.out;;
 			*.rs) rustc $arg && ./main "$input"; rm -r main;;
 			*.awk) awk -f $arg "$input";;
 			*.py) python $arg "$input";;
